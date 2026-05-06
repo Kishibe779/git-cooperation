@@ -1,0 +1,9 @@
+﻿.env
+.env.local
+backend/.env
+backend/.env.local
+__pycache__/
+.pytest_cache/
+*.pyc
+backend_uvicorn.out
+backend_uvicorn.err

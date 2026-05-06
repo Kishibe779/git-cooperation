@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerPilot</title>
+    <link rel="stylesheet" href="./styles.css?v=20260428-10" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#/">
+          <span class="brand-mark">CP</span>
+          <span>
+            <strong>CareerPilot</strong>
+            <small>AI Resume Studio</small>
+          </span>
+        </a>
+
+        <nav class="nav">
+          <a href="#/" data-route="/">Dashboard</a>
+          <a href="#/analyze" data-route="/analyze">Resume Studio</a>
+          <a href="#/history" data-route="/history">Reports</a>
+          <a href="#/plans" data-route="/plans">Billing</a>
+          <a href="#/settings" data-route="/settings">Settings</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p id="backend-status">Checking backend</p>
+          <button id="auth-button" class="ghost-button" type="button">Login / Register</button>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="route-eyebrow">Product Dashboard</p>
+            <h1 id="route-title">Dashboard</h1>
+          </div>
+          <div class="user-chip" id="user-chip">Guest</div>
+        </header>
+
+        <main id="view-root"></main>
+      </div>
+    </div>
+
+    <dialog id="auth-dialog" class="auth-dialog">
+      <form method="dialog" class="dialog-card">
+        <button class="dialog-close" value="close" type="submit">x</button>
+        <div class="tabs">
+          <button id="login-tab" class="tab active" type="button">Login</button>
+          <button id="register-tab" class="tab" type="button">Register</button>
+        </div>
+        <div id="auth-message" class="auth-message hidden"></div>
+        <div id="login-panel" class="auth-panel">
+          <label>Email <input id="login-email" type="email" autocomplete="email" /></label>
+          <label>Password <input id="login-password" type="password" autocomplete="current-password" /></label>
+          <button id="login-submit" type="button">Login</button>
+        </div>
+        <div id="register-panel" class="auth-panel hidden">
+          <label>Name <input id="register-name" type="text" autocomplete="name" /></label>
+          <label>Email <input id="register-email" type="email" autocomplete="email" /></label>
+          <label>Password <input id="register-password" type="password" autocomplete="new-password" /></label>
+          <label>Confirm password <input id="register-confirm" type="password" autocomplete="new-password" /></label>
+          <p class="form-hint">Use at least 8 characters with letters and numbers.</p>
+          <button id="register-submit" type="button">Create account</button>
+        </div>
+        <div id="account-panel" class="auth-panel hidden">
+          <div class="account-summary">
+            <strong id="account-name">Signed in</strong>
+            <span id="account-email"></span>
+            <span id="account-plan"></span>
+          </div>
+          <button id="logout-submit" class="secondary-button" type="button">Logout</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script defer src="./app.js?v=20260428-10"></script>
+  </body>
+</html>
